@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>authentication</title>
+</head>
+<body>
+<h1>welcome to gfg</h1>
+
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+    {{ message }}
+    </div>
+{% endfor %}
+{% if user.is_authenticated %}
+<h2>hi {{ fname }}</h2>
+<button type="submit"><a href="{% url 'account:signout' %}">signout</a></button>
+{% else %}
+<button type="submit"><a href="{% url "account:signup" %}">signup</a></button>
+<button type="submit"><a>signin</a></button>
+{% endif %}
+</body>
+</html>

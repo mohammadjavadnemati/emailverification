@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign in</title>
+</head>
+<body>
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+    {{ message }}
+    </div>
+{% endfor %}
+<form action="" method="post">
+    {% csrf_token %}
+    <label>username</label>
+    <input type="text" id="username" name="username" placeholder="please enter your username">
+
+    <input type="password" id="pass1" name="pass1" placeholder="please enter your password">
+
+    <button type="submit">sign in</button>
+</form>
+</body>
+</html>
